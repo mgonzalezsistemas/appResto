@@ -315,7 +315,7 @@ namespace ImprimirTicket
             //hay que copiar la clase RawPrinterHelper que nos proporciona Microsoft
             RawPrinterHelper.SendStringToPrinter(impresora, linea.ToString());
             //string nombreArchivo = "C:\\Users\\german\\Desktop\\AlgranatiGroupLTDA\\Tickets\\" + Persistencia.numeroTicket+".txt";
-            string nombreArchivo = "E:\\AlgranatiGroupLTDA\\Tickets\\" + Persistencia.numeroTicket + ".txt";
+            string nombreArchivo = "C:\\Users\\german\\Desktop\\AlgranatiGroupLTDA\\Tickets\\" + Persistencia.numeroTicket + ".txt";
             StreamWriter contenido = new StreamWriter(nombreArchivo);
             contenido.Write(linea);
             contenido.Close();

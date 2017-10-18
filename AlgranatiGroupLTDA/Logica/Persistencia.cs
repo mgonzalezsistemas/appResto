@@ -174,7 +174,7 @@ namespace AlgranatiGroupLTDA.Logica
 
             con.CerrarConexion();
             return p;
-        } //Carga los platos que hay en la BD
+        } //Busca un plato en la BD
 
         public static void EliminarPlato(int pid)
         {
@@ -198,6 +198,8 @@ namespace AlgranatiGroupLTDA.Logica
             {
                 throw new Exception("No se pudo eliminar el Plato!");
             }
-        } //Modifica un plato existente en la BD
+        } //Elimina un plato existente en la BD
+
+
     }
 }
