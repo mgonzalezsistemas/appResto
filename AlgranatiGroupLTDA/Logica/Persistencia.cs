@@ -50,6 +50,30 @@ namespace AlgranatiGroupLTDA.Logica
             return ultimoTicket++;
         } //Carga el siguiente numero de ticket a utilizar
 
+        public static void IngresarTicket(long numero, double total, string tipo, DateTime fecha)
+        {
+            ConexionBD con = new ConexionBD();
+            con.AbrirConexion();
+
+            if (con == null)
+            {
+                throw new Exception("No se pudo conectar a la Base de Datos!");
+            }
+
+            string consulta = "INSERT INTO Ticket (numero, total, tipoPago, fecha) VALUES (" + numero.ToString() + "," + total.ToString() +",'"+tipo+ "',"+DateTime.Today.ToShortDateString()+");";
+
+            MySqlCommand cmd = new MySqlCommand(consulta, con.conexion);
+
+            int Resultado = cmd.ExecuteNonQuery();
+
+            con.CerrarConexion();
+
+            if (Resultado == 0)
+            {
+                throw new Exception("No se pudo ingresar el ticket!");
+            }
+        } //Ingresar un nuevo plato a la BD
+
         public static List<Plato> CargarPlatos()
         {
             ConexionBD con = new ConexionBD();
